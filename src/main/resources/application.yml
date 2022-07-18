@@ -1,0 +1,33 @@
+#default port where the service will be started
+server:
+  port: 8083  
+
+#tells about the Eureka server details and its refresh time 
+eureka:     
+  instance:
+    leaseRenewalIntervalInSeconds: 1
+    leaseExpirationDurationInSeconds: 2
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8761/eureka/
+    healthcheck:
+      enabled: true
+    lease:
+      duration: 5
+
+spring:   
+  application:
+    name: display-video   #get data dfrom mongodb
+  data:
+    mongodb:
+     uri: mongodb://localhost:27017/studyaid
+     
+management:
+  security:
+    enabled: false  #disable the spring security on the management endpoints like /env, /refresh etc. 
+
+   
+#logging:
+#  level:
+#    com.sa.displayvideo: DEBUG
+
