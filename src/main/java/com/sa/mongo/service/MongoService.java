@@ -1,11 +1,16 @@
 package com.sa.mongo.service;
 
-import com.sa.mongo.model.Lessons;
+import java.util.List;
 
-public interface LessonService {
+import com.sa.mongo.model.Lessons;
+import com.sa.mongo.model.WebCourse;
+
+public interface MongoService {
 	
 	public Lessons getLessonByContentId(long id);
 	
 	public Lessons findItemByLessonTilte(String title);
+	
+	public WebCourse getWebCourseList(String desc);
 
 }

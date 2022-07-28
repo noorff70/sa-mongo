@@ -1,34 +1,45 @@
 package com.sa.mongo.controller;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.sa.mongo.model.Lessons;
-import com.sa.mongo.service.LessonService;
+import com.sa.mongo.service.MongoService;
+import com.sa.mongo.model.WebCourse;
 
 
 @RestController
-public class VideoController {
+public class MongoController {
 	
 	@Autowired
-	private LessonService lessonService;
+	private MongoService mongoService;
 	
 	
-	@GetMapping("/video/getLessonByContentId")
+	@GetMapping("/mongo/getLessonByContentId")
 	public Lessons getTopicDescription (@RequestParam("CONTENTID") long contentId) {
 
-		Lessons lesson = lessonService.getLessonByContentId(contentId);
+		Lessons lesson = mongoService.getLessonByContentId(contentId);
 		
 		return lesson;
 		
 	}
 	
+	@GetMapping("/mongo/getWebCourseList")
+	public WebCourse getWebCourseList (@RequestParam("WEBCOURSEDESC") String desc) {
+		
+		WebCourse webCourseList = mongoService.getWebCourseList(desc);
+		
+		return webCourseList;
+	}
+	
 	/*@GetMapping("/video/getLessonByTitle")
 	public Lessons getLessonByTitle (@RequestParam("TITLE") String title) {
 
-		Lessons lesson = lessonService.findItemByLessonTilte(title);
+		Lessons lesson = mongoService.findItemByLessonTilte(title);
 		
 		return lesson;
 		

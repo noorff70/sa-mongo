@@ -17,7 +17,7 @@ eureka:
 
 spring:   
   application:
-    name: display-video   #get data dfrom mongodb
+    name: sa-mongo   #get data dfrom mongodb
   data:
     mongodb:
      uri: mongodb://localhost:27017/studyaid

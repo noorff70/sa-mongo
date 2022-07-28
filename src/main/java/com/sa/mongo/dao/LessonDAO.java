@@ -12,6 +12,5 @@ public interface LessonDAO extends MongoRepository<Lessons, String> {
 
 	Lessons findByLessonId(long lessonId);
 	List<Lessons> findAll();
-	
 }
 
