@@ -28,6 +28,8 @@ class AvailableCourse {
 	private long courseId;
 	private String courseIntroduction;
 	private String courseTitle;
+	private String courseObjective;
 	private String duration;
+	private String courseInstruction;
 	private List<String> tags;
 }

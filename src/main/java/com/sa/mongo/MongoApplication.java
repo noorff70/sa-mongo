@@ -7,10 +7,10 @@ import org.springframework.data.mongodb.repository.config.EnableMongoRepositorie
 
 @SpringBootApplication
 @EnableMongoRepositories
-public class MongoConnectionApplication {
+public class MongoApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(MongoConnectionApplication.class, args);
+		SpringApplication.run(MongoApplication.class, args);
 	}
 
 }
