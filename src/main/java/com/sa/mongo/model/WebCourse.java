@@ -27,9 +27,10 @@ class AvailableCourse {
 	
 	private long courseId;
 	private String courseIntroduction;
-	private String courseTitle;
+	private String courseName;
 	private String courseObjective;
 	private String duration;
+	private boolean available;
 	private String courseInstruction;
 	private List<String> tags;
 }
