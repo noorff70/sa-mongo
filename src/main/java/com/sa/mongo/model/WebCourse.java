@@ -30,6 +30,7 @@ class AvailableCourse {
 	private String courseName;
 	private String courseObjective;
 	private String duration;
+	private boolean available;
 	private String courseInstruction;
 	private List<String> tags;
 }
