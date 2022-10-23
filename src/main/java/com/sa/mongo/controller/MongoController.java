@@ -33,15 +33,6 @@ public class MongoController {
 		
 		return webCourseList;
 	}
-	
-	/*@GetMapping("/video/getLessonByTitle")
-	public Lessons getLessonByTitle (@RequestParam("TITLE") String title) {
-
-		Lessons lesson = mongoService.findItemByLessonTilte(title);
-		
-		return lesson;
-		
-	}*/
 
 
 }
