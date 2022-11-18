@@ -9,7 +9,10 @@ eureka:
     leaseExpirationDurationInSeconds: 2
   client:
     serviceUrl:
-      defaultZone: http://localhost:8761/eureka/
+     # docker
+     # defaultZone: http://sa-discovery:8761/eureka/
+     # localhost
+       defaultZone: http://localhost:8761/eureka/
     healthcheck:
       enabled: true
     lease:
@@ -21,13 +24,13 @@ spring:
   data:
     mongodb:
      #1. when localhost in laptop -working ok
-     #uri: mongodb://localhost:27017/studyaid
+     uri: mongodb://localhost:27017/studyaid
     
      #2. when Docker running in doker desktop in windows - working ok
      #uri: mongodb://host.docker.internal:27017/studyaid
      
      #3. when Docker running in aws
-     uri: mongodb://host.docker.internal:27017/studyaid
+     #uri: mongodb://host.docker.internal:27017/studyaid
      #uri: mongodb://admin:studyaid@3.12.185.202:27017/?authMechanism=DEFAULT/studyaid
      
      
