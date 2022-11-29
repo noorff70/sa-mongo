@@ -16,6 +16,8 @@ COPY ${JAR_FILE} sa-mongo.jar
 # java -jar /opt/app/app.jar
 ENTRYPOINT ["java","-jar","sa-mongo.jar"]
 
+EXPOSE 8082
+
 # Make docker file
 # C:\dev\repos\studyaid\sa-gateway>docker build -t sa-mongo .
 
