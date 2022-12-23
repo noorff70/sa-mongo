@@ -24,15 +24,15 @@ spring:
   data:
     mongodb:
      #1. when localhost in laptop -working ok
-     uri: mongodb://localhost:27017/studyaid
+      uri: mongodb://localhost:27017/studyaid
     
      #2. when Docker running in doker desktop in windows - working ok
      #uri: mongodb://host.docker.internal:27017/studyaid
      
      #3. when Docker running in aws
-      #uri: mongodb://admin:studyaid@172.17.0.1:27017/?authSource=admin&authMechanism=SCRAM-SHA-1
+      #uri: mongodb://admin:studyaid@mongoservice:27017/studyaid?authSource=admin
       #database: studyaid
-     #uri: mongodb://admin:studyaid@3.12.185.202:27017/?authMechanism=DEFAULT/studyaid
+      #uri: mongodb://admin:studyaid@3.12.185.202:27017/?authMechanism=DEFAULT/studyaid
      
      
      
