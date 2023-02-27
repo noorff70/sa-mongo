@@ -1,6 +1,6 @@
 #default port where the service will be started
 server:
-  port: 8082 
+  port: 8083 
 
 #tells about the Eureka server details and its refresh time 
 eureka:     
