@@ -18,16 +18,13 @@ spring:
     name: sa-mongo   #get data dfrom mongodb
   data:
     mongodb:
-     #1. when localhost in laptop -working ok
-     # uri: mongodb://localhost:27017/studyaid
-    
-     #2. when Docker running in doker desktop in windows - working ok
-     #uri: mongodb://host.docker.internal:27017/studyaid
-     
      #3. when Docker running in aws
       uri: mongodb://admin:studyaid@mongoservice:27017/studyaid?authSource=admin
-      #database: studyaid
-      #uri: mongodb://admin:studyaid@3.12.185.202:27017/?authMechanism=DEFAULT/studyaid
+  cache:
+    type=redis
+  redis:
+    host: ip-172-31-23-235
+    port: 6379
      
      
      
