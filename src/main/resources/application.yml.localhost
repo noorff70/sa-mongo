@@ -25,6 +25,11 @@ spring:
     mongodb:
      #1. when localhost in laptop -working ok
       uri: mongodb://localhost:27017/studyaid
+  cache:
+    type=redis
+  redis:
+    host: localhost
+    port: 6379  
     
      #2. when Docker running in doker desktop in windows - working ok
      #uri: mongodb://host.docker.internal:27017/studyaid
@@ -33,7 +38,8 @@ spring:
       #uri: mongodb://admin:studyaid@mongoservice:27017/studyaid?authSource=admin
       #database: studyaid
       #uri: mongodb://admin:studyaid@3.12.185.202:27017/?authMechanism=DEFAULT/studyaid
-     
+   
+      
      
      
      

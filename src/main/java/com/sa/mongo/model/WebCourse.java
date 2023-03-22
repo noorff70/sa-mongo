@@ -1,5 +1,6 @@
 package com.sa.mongo.model;
 
+import java.io.Serializable;
 import java.util.List;
 
 import org.springframework.data.mongodb.core.mapping.Document;
@@ -11,8 +12,10 @@ import lombok.Setter;
 @Getter
 @Setter
 @Document(collection = "webcourse")
-public class WebCourse {
+public class WebCourse implements Serializable{
 
+	private static final long serialVersionUID = 1L;
+	
 	@Field
 	private long subjectId;
 	private String name;
@@ -23,7 +26,9 @@ public class WebCourse {
 @Getter
 @Setter
 @Document
-class AvailableCourse {
+class AvailableCourse implements Serializable{
+	
+	private static final long serialVersionUID = 1L;
 	
 	private long courseId;
 	private String courseIntroduction;
