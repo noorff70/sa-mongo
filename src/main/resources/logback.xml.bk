@@ -3,7 +3,7 @@
 <configuration>
 
  <!--    <property name="LOG_PATH" value="./log/sa-mongo.log"/> -->
- <!-- 		<property name="LOG_PATH" value="c:/temp/sa-mongo.log"/> -->
+  		<property name="LOG_PATH" value="c:/temp/sa-mongo.log"/> 
 
     <appender name="FILE-ROLLING" class="ch.qos.logback.core.rolling.RollingFileAppender">
         <file>${LOG_PATH}</file>
@@ -23,11 +23,11 @@
         </encoder>
     </appender>
 
-    <logger name="com.sa.mongo" level="error" additivity="false">
+    <logger name="com.sa.mongo" level="info" additivity="false">
         <appender-ref ref="FILE-ROLLING"/>
     </logger>
 
-    <root level="error">
+    <root level="info">
         <appender-ref ref="FILE-ROLLING"/>
     </root>
 

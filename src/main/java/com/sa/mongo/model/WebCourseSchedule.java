@@ -1,6 +1,7 @@
 package com.sa.mongo.model;
 
 import java.io.Serializable;
+import java.util.Date;
 import java.util.List;
 
 import org.springframework.data.annotation.Id;
@@ -11,13 +12,15 @@ import lombok.Setter;
 
 @Getter
 @Setter
-@Document(collection = "webcourse")
-public class WebCourse implements Serializable{
+@Document(collection = "webCourseSchedule")
+public class WebCourseSchedule implements Serializable{
 
 	private static final long serialVersionUID = 1L;
-	
+
 	@Id
-	private long subjectId;
-	private String webCourseName;
-	private List <WebAvailableCourse> availableCourses ;
+	private int webCourseOfferNumber;
+	private String webCourseScheduleDate;
+	private List<Student> webCourseStudentList;
+	private Tutor tutor;
+	
 }
