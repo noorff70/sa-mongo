@@ -21,6 +21,5 @@ public class WebCourseSchedule implements Serializable{
 	private int webCourseOfferNumber;
 	private String webCourseScheduleDate;
 	private List<Student> webCourseStudentList;
-	private Tutor tutor;
-	
+		
 }

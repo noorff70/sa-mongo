@@ -12,8 +12,8 @@ import lombok.Setter;
 @Getter
 @Setter
 @Document(collection = "webAvailableCourse")
-public class WebAvailableCourse implements Serializable{
 	
+public class WebAvailableCourse implements Serializable{
 	
 	private static final long serialVersionUID = 1L;
 	
@@ -25,7 +25,10 @@ public class WebAvailableCourse implements Serializable{
 	private String duration;
 	private boolean available;
 	private String courseInstruction;
+	private String courseType; // Free=1, Paid=2
+	private int courseSize;
+	private int courseFee;
 	private List<String> tags;
 	private List<WebCourseSchedule> webCourseSchedule;
-
+	private String tutorId;
 }
