@@ -5,7 +5,9 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.sa.mongo.model.RequestObject;
 import com.sa.mongo.model.Student;
+import com.sa.mongo.model.Tutor;
 import com.sa.mongo.model.User;
 import com.sa.mongo.model.UserAccessReturnObject;
 import com.sa.mongo.service.UserService;
@@ -29,19 +31,41 @@ public class UserController {
 		return userStudent;
 	}
 	
+	@PostMapping("/mongo/findTutorByTutorId")
+	public Tutor findTutorByTutorId (@RequestBody RequestObject req) {
+		
+		Tutor  t = userService.findTutorByTutorId(req.getTutorId());
+		
+		return t;
+	}
 	
 	
+	// add a new student
 	@PostMapping("/mongo/registration/registerNewUser")
 	public UserAccessReturnObject registerNewUser(@RequestBody Student student) {
 		
 		UserAccessReturnObject userAccessObject = new UserAccessReturnObject();
 		
-		User user1 = student;
+		User user = student;
 
-		userAccessObject = userService.registerNewUser(user1);
+		userAccessObject = userService.registerNewUser(user);
 		
 		return userAccessObject;
 		
+	}
+	
+	// add a tutor- postman only
+	@PostMapping("/mongo/registration/addTutor")
+	public UserAccessReturnObject addTutor(@RequestBody Tutor tutor) {
+		
+		UserAccessReturnObject userAccessObject = new UserAccessReturnObject();
+		
+		User user = tutor;
+		
+		userAccessObject = userService.addTutor(user);
+		
+		return userAccessObject;
+	
 	}
 	
 }

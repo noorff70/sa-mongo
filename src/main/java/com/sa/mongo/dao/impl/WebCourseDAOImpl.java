@@ -35,6 +35,7 @@ public class WebCourseDAOImpl implements WebCourseDAO{
 		
 	}
 
+	// add a student to a schedule course
 	@Override
 	public String addStudentToScheduledCourse(int subjectId, int webScheduleId, int webCourseId, Student student) {
 		
@@ -75,6 +76,14 @@ public class WebCourseDAOImpl implements WebCourseDAO{
 			}
 		}
 		
+		// check if course has max number of enrollments
+		if (webCourseSchedule.getWebCourseStudentList() != null && 
+				webCourseSchedule.getWebCourseStudentList().size() > webAvailableCourse.getCourseSize()) {
+			webAvailableCourse.setAvailable(false);
+			mongoTemplate.save(webAvailableCourse);
+			return "Course is Full";
+		}
+		
 		// now add the student and we have got an updated webCourseDateList
 		if (webCourseSchedule.getWebCourseStudentList()== null) {
 			List<Student> studentList = new ArrayList<Student>();
@@ -97,6 +106,7 @@ public class WebCourseDAOImpl implements WebCourseDAO{
 		
 	}
 	
+	// add a new webcourse - only postman
 	public void addWebCourse (WebCourse course) {
 		try {
 			mongoTemplate.save(course);
