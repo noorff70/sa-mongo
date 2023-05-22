@@ -5,6 +5,7 @@ import org.springframework.stereotype.Service;
 
 import com.sa.mongo.dao.WebCourseDAO;
 import com.sa.mongo.model.Student;
+import com.sa.mongo.model.APIResponseObject;
 import com.sa.mongo.model.WebCourse;
 import com.sa.mongo.service.WebCourseService;
 
@@ -20,7 +21,7 @@ public class WebCourseServiceImpl implements WebCourseService{
 		return webCourseDAO.findByWebCourseName(desc);
 	}
 	
-	public String addStudentToScheduledCourse(int subjectId, int webScheduleId, int webCourseId, Student student) {
+	public APIResponseObject addStudentToScheduledCourse(int subjectId, int webScheduleId, int webCourseId, Student student) {
 		return webCourseDAO.addStudentToScheduledCourse(subjectId, webScheduleId, webCourseId, student);
 	}
 	

@@ -5,14 +5,14 @@ import java.util.List;
 
 import com.sa.mongo.model.Course;
 import com.sa.mongo.model.Lessons;
-import com.sa.mongo.model.UserAccessReturnObject;
+import com.sa.mongo.model.APIResponseObject;
 
 public interface CourseService {
 	
 	public Lessons getLessonByContentId(long id);
 	
 	public List<Course> getCourseListByCourseDesc(String desc);
-	public UserAccessReturnObject addCourseToUser(long courseId, String userName);
+	public APIResponseObject addCourseToUser(long courseId, String userName);
 	
 //	public Course findCourseByCourseName(long courseId);
 	

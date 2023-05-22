@@ -8,7 +8,7 @@ import com.sa.mongo.dao.UserDAO;
 import com.sa.mongo.model.Student;
 import com.sa.mongo.model.Tutor;
 import com.sa.mongo.model.User;
-import com.sa.mongo.model.UserAccessReturnObject;
+import com.sa.mongo.model.APIResponseObject;
 import com.sa.mongo.service.UserService;
 import com.sa.utility.UserType;
 
@@ -21,9 +21,9 @@ public class UserServiceImpl implements UserService{
 
 
 	@Override
-	public UserAccessReturnObject registerNewUser(User user) {
+	public APIResponseObject registerNewUser(User user) {
 		
-		UserAccessReturnObject userAccessObject = new UserAccessReturnObject();
+		APIResponseObject userAccessObject = new APIResponseObject();
 		
 		// assign username to unique userid
 		user.setUserId(user.getUserName());
@@ -57,9 +57,9 @@ public class UserServiceImpl implements UserService{
 	}
 
 	@Override
-	public UserAccessReturnObject findUserByUserNameAndPassword(Student student) {
+	public APIResponseObject findUserByUserNameAndPassword(Student student) {
 		
-		UserAccessReturnObject userAccessObject = new UserAccessReturnObject();
+		APIResponseObject userAccessObject = new APIResponseObject();
 		
 		User user = userDAO.findUserByUserNameAndPassword(student);
 		
@@ -93,9 +93,9 @@ public class UserServiceImpl implements UserService{
 
 	// add tutor postman only
 	@Override
-	public UserAccessReturnObject addTutor(User tutor) {
+	public APIResponseObject addTutor(User tutor) {
 
-		UserAccessReturnObject userAccessObject = new UserAccessReturnObject();
+		APIResponseObject userAccessObject = new APIResponseObject();
 		
 		// assign username to unique userid
 		tutor.setUserId(tutor.getUserName());

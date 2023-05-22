@@ -1,7 +1,6 @@
 package com.sa.mongo.dao.impl;
 
 import java.util.ArrayList;
-import java.util.Date;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -13,6 +12,7 @@ import org.springframework.stereotype.Repository;
 import com.sa.mongo.dao.WebCourseDAO;
 import com.sa.mongo.model.WebAvailableCourse;
 import com.sa.mongo.model.Student;
+import com.sa.mongo.model.APIResponseObject;
 import com.sa.mongo.model.WebCourse;
 import com.sa.mongo.model.WebCourseSchedule;
 
@@ -37,9 +37,9 @@ public class WebCourseDAOImpl implements WebCourseDAO{
 
 	// add a student to a schedule course
 	@Override
-	public String addStudentToScheduledCourse(int subjectId, int webScheduleId, int webCourseId, Student student) {
+	public APIResponseObject addStudentToScheduledCourse(int subjectId, int webScheduleId, int webCourseId, Student student) {
 		
-		String result= null;
+		APIResponseObject userAccess = new APIResponseObject();
 		
 		// first find that webCourse
 		Query query = new Query();
@@ -66,7 +66,9 @@ public class WebCourseDAOImpl implements WebCourseDAO{
 				if (studentList != null) {
 					for (Student st : studentList) {
 						if (st.getUserName().equals(student.getUserName())) {
-							return "You have enrolled already";
+							userAccess.setMsgReturned("You have already enrolled");
+							userAccess.setApiResponseStatus("STATUS_FAIL");
+							return userAccess;
 						}
 					}
 				}
@@ -81,7 +83,9 @@ public class WebCourseDAOImpl implements WebCourseDAO{
 				webCourseSchedule.getWebCourseStudentList().size() > webAvailableCourse.getCourseSize()) {
 			webAvailableCourse.setAvailable(false);
 			mongoTemplate.save(webAvailableCourse);
-			return "Course is Full";
+			userAccess.setMsgReturned("Course Enrollment is Full");
+			userAccess.setApiResponseStatus("STATUS_FAIL");
+			return userAccess;
 		}
 		
 		// now add the student and we have got an updated webCourseDateList
@@ -95,14 +99,15 @@ public class WebCourseDAOImpl implements WebCourseDAO{
 		
 		try {
 			mongoTemplate.save(course);
-			result = "You are registered.";
+			userAccess.setMsgReturned("You are Registered");
+			userAccess.setApiResponseStatus("STATUS_SUCCESS");
 		} catch (Exception e) {
-			result = "Could not be saved. Please contact admin";
-			return result;
+			userAccess.setMsgReturned("Could not be saved. Please contact admin");
+			userAccess.setApiResponseStatus("STATUS_FAIL");
 		}
 		
 
-		return result;
+		return userAccess;
 		
 	}
 	
