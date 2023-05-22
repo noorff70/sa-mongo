@@ -17,7 +17,7 @@ import com.sa.mongo.model.Course;
 import com.sa.mongo.model.Lessons;
 import com.sa.mongo.model.Student;
 import com.sa.mongo.model.User;
-import com.sa.mongo.model.UserAccessReturnObject;
+import com.sa.mongo.model.APIResponseObject;
 import com.sa.mongo.service.CourseService;
 
 
@@ -47,9 +47,9 @@ public class CourseServiceImpl implements CourseService{
 		return courseDAO.getCourseListByCourseDesc(desc);
 	}
 	
-	public UserAccessReturnObject addCourseToUser(long courseId, String userName) {
+	public APIResponseObject addCourseToUser(long courseId, String userName) {
 		
-		UserAccessReturnObject userAccessObject = new UserAccessReturnObject();
+		APIResponseObject userAccessObject = new APIResponseObject();
 		
 		// get course from course table
 		Course course = courseDAO.getCourseByCourseId(courseId);

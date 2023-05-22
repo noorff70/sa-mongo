@@ -13,7 +13,7 @@ import com.sa.mongo.model.Course;
 import com.sa.mongo.model.Lessons;
 import com.sa.mongo.model.RequestObject;
 import com.sa.mongo.model.Student;
-import com.sa.mongo.model.UserAccessReturnObject;
+import com.sa.mongo.model.APIResponseObject;
 import com.sa.mongo.model.UserCourse;
 import com.sa.mongo.service.CourseService;
 
@@ -54,12 +54,12 @@ public class CourseController {
 	 * Add course to user/ enroll a course
 	 */
 	@PostMapping("/mongo/addCourseToUser")
-	public UserAccessReturnObject addCourseToUser(@RequestBody UserCourse content) {
+	public APIResponseObject addCourseToUser(@RequestBody UserCourse content) {
 		
 		Long courseId = content.getCourseId();
 		String userName = content.getUserName();
 		
-		UserAccessReturnObject returnObject = courseService.addCourseToUser(courseId, userName);
+		APIResponseObject returnObject = courseService.addCourseToUser(courseId, userName);
 	
 		return returnObject;
 		

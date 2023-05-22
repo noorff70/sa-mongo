@@ -7,10 +7,10 @@ import lombok.Setter;
 
 @Getter
 @Setter
-public class UserAccessReturnObject {
+public class APIResponseObject {
 	
 	String msgReturned;
-//	boolean success;
+	String apiResponseStatus; // STATUS_OK, STATUS_FAIL
 	boolean loginSuccess;
 	boolean addContentToUserSuccess;
 	Student student;

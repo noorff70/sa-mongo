@@ -3,7 +3,7 @@ package com.sa.mongo.dao;
 import com.sa.mongo.model.Student;
 import com.sa.mongo.model.Tutor;
 import com.sa.mongo.model.User;
-import com.sa.mongo.model.UserAccessReturnObject;
+import com.sa.mongo.model.APIResponseObject;
 
 
 public interface UserDAO  {

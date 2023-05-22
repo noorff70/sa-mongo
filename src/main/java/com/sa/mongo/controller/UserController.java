@@ -9,7 +9,7 @@ import com.sa.mongo.model.RequestObject;
 import com.sa.mongo.model.Student;
 import com.sa.mongo.model.Tutor;
 import com.sa.mongo.model.User;
-import com.sa.mongo.model.UserAccessReturnObject;
+import com.sa.mongo.model.APIResponseObject;
 import com.sa.mongo.service.UserService;
 
 
@@ -24,9 +24,9 @@ public class UserController {
 	 * get user by username and password
 	 */
 	@PostMapping("/mongo/login/findUserByUserNameAndPassword")
-	public UserAccessReturnObject findUserByUserNameAndPassword (@RequestBody Student student) {
+	public APIResponseObject findUserByUserNameAndPassword (@RequestBody Student student) {
 		
-		UserAccessReturnObject  userStudent = userService.findUserByUserNameAndPassword(student);
+		APIResponseObject  userStudent = userService.findUserByUserNameAndPassword(student);
 		
 		return userStudent;
 	}
@@ -42,9 +42,9 @@ public class UserController {
 	
 	// add a new student
 	@PostMapping("/mongo/registration/registerNewUser")
-	public UserAccessReturnObject registerNewUser(@RequestBody Student student) {
+	public APIResponseObject registerNewUser(@RequestBody Student student) {
 		
-		UserAccessReturnObject userAccessObject = new UserAccessReturnObject();
+		APIResponseObject userAccessObject = new APIResponseObject();
 		
 		User user = student;
 
@@ -56,9 +56,9 @@ public class UserController {
 	
 	// add a tutor- postman only
 	@PostMapping("/mongo/registration/addTutor")
-	public UserAccessReturnObject addTutor(@RequestBody Tutor tutor) {
+	public APIResponseObject addTutor(@RequestBody Tutor tutor) {
 		
-		UserAccessReturnObject userAccessObject = new UserAccessReturnObject();
+		APIResponseObject userAccessObject = new APIResponseObject();
 		
 		User user = tutor;
 		

@@ -5,6 +5,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.sa.mongo.model.APIResponseObject;
 import com.sa.mongo.model.RequestObject;
 import com.sa.mongo.model.Student;
 import com.sa.mongo.model.WebCourse;
@@ -28,16 +29,18 @@ public class WebCourseController {
 	}
 	
 	@PostMapping("/mongo/addStudentToScheduledCourse")
-	public String addStudentToOfferedCourse (@RequestBody RequestObject obj) {
+	public APIResponseObject addStudentToOfferedCourse (@RequestBody RequestObject obj) {
+		
+		APIResponseObject apiResponse = new APIResponseObject();
 		
 		int webScheduleId = obj.getWebCourseScheduleId();
 		int webCourseId = obj.getWebAvailableCourseId();
 		Student student = obj.getWebAddStudent();
 		int subjectId = obj.getWebSubjectId();
 		
-		String test = webCourseService.addStudentToScheduledCourse(subjectId, webScheduleId, webCourseId, student); 
+		apiResponse = webCourseService.addStudentToScheduledCourse(subjectId, webScheduleId, webCourseId, student); 
 		
-		return null;
+		return apiResponse;
 		
 	}
 	
