@@ -66,7 +66,7 @@ public class WebCourseDAOImpl implements WebCourseDAO{
 				if (studentList != null) {
 					for (Student st : studentList) {
 						if (st.getUserName().equals(student.getUserName())) {
-							userAccess.setMsgReturned("You have already enrolled");
+							userAccess.setMsgReturned("You already have enrolled for this Training.");
 							userAccess.setApiResponseStatus("STATUS_FAIL");
 							return userAccess;
 						}

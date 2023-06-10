@@ -25,7 +25,7 @@ public class WebAvailableCourse implements Serializable{
 	private String duration;
 	private boolean available;
 	private String courseInstruction;
-	private String courseType; // Free=1, Paid=2
+	//private String courseType; // Free=1, Paid=2
 	private int courseSize;
 	private int courseFee;
 	private List<String> tags;

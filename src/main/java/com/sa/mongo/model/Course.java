@@ -19,6 +19,6 @@ public class Course {
 	private String courseName;
 	private String courseDesc;
 	private String tutorName;
-	private String courseType;
+	//private String courseType;
 
 }
