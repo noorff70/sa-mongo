@@ -29,7 +29,7 @@ public class WebCourseController {
 	}
 	
 	@PostMapping("/mongo/addStudentToScheduledCourse")
-	public APIResponseObject addStudentToOfferedCourse (@RequestBody RequestObject obj) {
+	public APIResponseObject addStudentToScheduledCourse (@RequestBody RequestObject obj) {
 		
 		APIResponseObject apiResponse = new APIResponseObject();
 		

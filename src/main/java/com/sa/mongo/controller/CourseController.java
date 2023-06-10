@@ -12,7 +12,6 @@ import org.springframework.web.bind.annotation.RestController;
 import com.sa.mongo.model.Course;
 import com.sa.mongo.model.Lessons;
 import com.sa.mongo.model.RequestObject;
-import com.sa.mongo.model.Student;
 import com.sa.mongo.model.APIResponseObject;
 import com.sa.mongo.model.UserCourse;
 import com.sa.mongo.service.CourseService;
