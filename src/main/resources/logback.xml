@@ -2,7 +2,7 @@
 
 <configuration>
 
-    <property name="LOG_PATH" value="./log/sa-mongo.log"/>
+ <!--    <property name="LOG_PATH" value="./log/sa-mongo.log"/> -->
  <!-- 		<property name="LOG_PATH" value="c:/temp/sa-mongo.log"/> -->
 
     <appender name="FILE-ROLLING" class="ch.qos.logback.core.rolling.RollingFileAppender">
