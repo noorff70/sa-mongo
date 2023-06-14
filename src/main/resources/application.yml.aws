@@ -34,7 +34,6 @@ management:
     enabled: false  #disable the spring security on the management endpoints like /env, /refresh etc. 
 
    
-#logging:
-#  level:
-#    com.sa.displayvideo: DEBUG
-
+logging:
+  level:
+    com.sa.mongo: ERROR
