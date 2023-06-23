@@ -24,7 +24,7 @@ public class WebCourseDAOImpl implements WebCourseDAO{
 	MongoTemplate mongoTemplate;
 
 	@Override
-	public WebCourse findByWebCourseName(String courseName) {
+	public WebCourse getWebCourseList(String courseName) {
 
 		Query query = new Query();
 		query.addCriteria(Criteria.where("webCourseName").is(courseName));
@@ -99,7 +99,7 @@ public class WebCourseDAOImpl implements WebCourseDAO{
 		
 		try {
 			mongoTemplate.save(course);
-			userAccess.setMsgReturned("You are Registered");
+			userAccess.setMsgReturned("You are Registered. We will send you Zoom link to attend.");
 			userAccess.setApiResponseStatus("STATUS_SUCCESS");
 		} catch (Exception e) {
 			userAccess.setMsgReturned("Could not be saved. Please contact admin");

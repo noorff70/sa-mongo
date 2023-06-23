@@ -7,7 +7,7 @@ import com.sa.mongo.model.WebCourse;
 
 public interface WebCourseDAO {
 
-	WebCourse findByWebCourseName(String desc);
+	WebCourse getWebCourseList(String desc);
 	public APIResponseObject addStudentToScheduledCourse(int subjectId, int webScheduleId, int webCourseId, Student student) ;
 	public void addWebCourse (WebCourse course);
 	
